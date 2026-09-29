@@ -17,6 +17,10 @@ export const site = {
 export const heroImage =
   "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2000&q=80";
 
+/** "Built around global trade" panel — distribution fleet, shot from above. */
+export const aboutImage =
+  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1600&q=80";
+
 export type Sector = {
   slug: string;
   name: string;

@@ -76,6 +76,75 @@ body {
   background-size: 14px 14px;
 }
 
+/* --- 50th anniversary treatment --- */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.text-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold-600) 18%,
+    var(--color-gold-300) 38%,
+    #fff6dd 48%,
+    var(--color-gold-300) 58%,
+    var(--color-gold-600) 78%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 44s linear infinite;
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-190px) scale(1.15);
+  }
+}
+
+.animate-rise {
+  animation: rise linear infinite;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -90,8 +159,18 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .text-shimmer,
+  .animate-float,
+  .animate-spin-slow,
+  .animate-rise {
     animation: none;
+  }
+  .text-shimmer {
+    color: var(--color-gold-400);
+  }
+  .animate-rise {
+    opacity: 0;
   }
   html {
     scroll-behavior: auto;

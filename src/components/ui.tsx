@@ -109,23 +109,69 @@ export function Portrait({
       ) : (
         <>
           <div className="dot-grid absolute inset-0 text-white/10" aria-hidden="true" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-            <span
-              className={`font-display font-bold text-gold-400/80 ${
-                compact ? "text-xl" : "text-5xl"
-              }`}
-            >
-              {initials}
-            </span>
-            {!compact && (
-              <span className="text-[10px] tracking-[0.2em] text-white/40 uppercase">
+          <div
+            className="absolute inset-x-0 -bottom-4 mx-auto h-[78%] w-[62%] rounded-full bg-gold-500/[0.07] blur-2xl"
+            aria-hidden="true"
+          />
+          <SuitedSilhouette className="absolute inset-0 h-full w-full" />
+          {!compact && (
+            <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-1 bg-gradient-to-t from-navy-950 via-navy-950/85 to-transparent pt-10 pb-4">
+              <span className="font-display text-lg font-bold text-gold-400/90">
+                {initials}
+              </span>
+              <span className="text-[9px] tracking-[0.2em] text-white/35 uppercase">
                 Portrait to follow
               </span>
-            )}
-          </div>
+            </div>
+          )}
         </>
       )}
     </div>
+  );
+}
+
+/**
+ * Placeholder bust used until the board's photographs arrive. Drawn rather
+ * than stocked on purpose: a stranger's face under a named director's profile
+ * would misrepresent a real person.
+ */
+function SuitedSilhouette({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 200 250"
+      preserveAspectRatio="xMidYMax slice"
+      className={className}
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="abco-bust" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1b4574" />
+          <stop offset="100%" stopColor="#0a2240" />
+        </linearGradient>
+      </defs>
+
+      {/* shoulders and torso */}
+      <path
+        d="M100 132c-34 0-62 20-70 48-4 14-6 30-6 44h152c0-14-2-30-6-44-8-28-36-48-70-48Z"
+        fill="url(#abco-bust)"
+      />
+      {/* jacket lapels */}
+      <path d="M100 132 78 186l10 38h24l10-38-22-54Z" fill="#04101f" opacity="0.55" />
+      {/* collar + tie */}
+      <path d="M100 134l-13 12 13 16 13-16-13-12Z" fill="#f7f3ea" opacity="0.28" />
+      <path d="M100 162l-6 8 6 44 6-44-6-8Z" fill="#c9a227" opacity="0.65" />
+      {/* head */}
+      <circle cx="100" cy="86" r="38" fill="url(#abco-bust)" />
+      {/* rim light */}
+      <path
+        d="M100 48a38 38 0 0 1 38 38"
+        fill="none"
+        stroke="#c9a227"
+        strokeOpacity="0.35"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }
 

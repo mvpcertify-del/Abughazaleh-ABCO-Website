@@ -28,9 +28,10 @@ export function AnniversarySeal({
           d="M 100,100 m -74,0 a 74,74 0 0 1 148,0"
           fill="none"
         />
+        {/* Left-to-right along the lower arc, which keeps the glyphs upright. */}
         <path
           id="abco50-arc-bottom"
-          d="M 100,100 m -74,0 a 74,74 0 0 0 148,0"
+          d="M 100,100 m -77,0 a 77,77 0 0 0 154,0"
           fill="none"
         />
       </defs>
@@ -86,15 +87,15 @@ export function AnniversarySeal({
         YEARS
       </text>
 
-      <line x1="56" y1="131" x2="144" y2="131" stroke={ring} strokeWidth="1.5" opacity="0.7" />
+      <line x1="58" y1="128" x2="142" y2="128" stroke={ring} strokeWidth="1.5" opacity="0.7" />
       <text
         x="100"
-        y="147"
+        y="143"
         textAnchor="middle"
         fill={ink}
-        fontSize="14"
+        fontSize="13"
         fontWeight="600"
-        letterSpacing="2.4"
+        letterSpacing="2"
         fontFamily="var(--font-sans, sans-serif)"
       >
         1975 – 2025

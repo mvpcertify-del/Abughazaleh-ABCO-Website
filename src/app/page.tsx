@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnniversarySeal, AnniversaryLockup } from "@/components/Anniversary50";
-import { GlobeGraphic } from "@/components/GlobeGraphic";
+import { Celebration50 } from "@/components/Celebration50";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { WorldMap } from "@/components/WorldMap";
 import { Button, LinkedInLink, Portrait } from "@/components/ui";
@@ -12,7 +12,15 @@ import {
   PinIcon,
   sectorIcons,
 } from "@/components/icons";
-import { heroImage, insights, leadership, regions, sectors, tradeCycle } from "@/lib/site";
+import {
+  aboutImage,
+  heroImage,
+  insights,
+  leadership,
+  regions,
+  sectors,
+  tradeCycle,
+} from "@/lib/site";
 
 const statItems = [
   { Icon: CalendarIcon, value: "1975", label: "Trading Since", sub: "50 Years of Business Excellence" },
@@ -199,12 +207,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center overflow-hidden bg-navy-900 px-4 py-16 lg:py-20">
-          <div className="dot-grid absolute inset-0 text-white/[0.07]" aria-hidden="true" />
-          <div className="relative w-full max-w-lg">
-            <GlobeGraphic className="w-full" />
+        <div className="relative flex items-end overflow-hidden bg-navy-900 px-4 py-16 sm:px-8 lg:py-20">
+          <Image
+            src={aboutImage}
+            alt="ABCO distribution fleet loading at a regional hub"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/75 to-navy-950/35" />
 
-            <div className="mt-8 border-t border-white/10 pt-7">
+          <div className="relative w-full">
+            <div className="border-t border-white/15 pt-7">
               <p className="text-center text-[11px] font-bold tracking-[0.2em] text-gold-400 uppercase">
                 Our Trade Ecosystem
               </p>
@@ -230,6 +244,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ---------------- 50 years ---------------- */}
+      <Celebration50 />
 
       {/* ---------------- Global presence ---------------- */}
       <section className="bg-white py-20">
