@@ -12,7 +12,7 @@ import {
   PinIcon,
   sectorIcons,
 } from "@/components/icons";
-import { heroImage, insights, leadership, sectors, tradeCycle } from "@/lib/site";
+import { heroImage, insights, leadership, regions, sectors, tradeCycle } from "@/lib/site";
 
 const statItems = [
   { Icon: CalendarIcon, value: "1975", label: "Trading Since", sub: "50 Years of Business Excellence" },
@@ -208,7 +208,7 @@ export default function Home() {
               <p className="text-center text-[11px] font-bold tracking-[0.2em] text-gold-400 uppercase">
                 Our Trade Ecosystem
               </p>
-              <div className="mt-5 grid grid-cols-4 gap-2">
+              <div className="mt-5 grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-4">
                 {tradeCycle.map((t, i) => (
                   <div key={t.step} className="relative text-center">
                     <p className="text-[12px] font-bold tracking-[0.08em] text-white uppercase">
@@ -217,7 +217,7 @@ export default function Home() {
                     <p className="mt-1 text-[10px] leading-snug text-white/45">{t.detail}</p>
                     {i < tradeCycle.length - 1 && (
                       <span
-                        className="absolute top-0 -right-1.5 text-gold-500/60"
+                        className="absolute top-0 -right-1.5 hidden text-gold-500/60 sm:inline"
                         aria-hidden="true"
                       >
                         →
@@ -255,7 +255,19 @@ export default function Home() {
               </div>
             </div>
 
-            <WorldMap withPins className="w-full text-navy-800/25" />
+            {/* The map's pin labels are illegible below tablet width, so small
+                screens get the same regions as plain chips instead. */}
+            <WorldMap withPins className="hidden w-full text-navy-800/25 md:block" />
+            <ul className="grid grid-cols-2 gap-2.5 md:hidden">
+              {regions.map((r) => (
+                <li
+                  key={r}
+                  className="border border-navy-800/15 bg-ivory-50 px-3 py-3 text-center text-[13px] font-semibold text-navy-800"
+                >
+                  {r}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

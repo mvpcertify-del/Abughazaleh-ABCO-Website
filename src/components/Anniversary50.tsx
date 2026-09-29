@@ -64,10 +64,10 @@ export function AnniversarySeal({
 
       <text
         x="100"
-        y="108"
+        y="100"
         textAnchor="middle"
         fill={ink}
-        fontSize="62"
+        fontSize="60"
         fontWeight="700"
         fontFamily="var(--font-display, serif)"
       >
@@ -75,10 +75,10 @@ export function AnniversarySeal({
       </text>
       <text
         x="100"
-        y="128"
+        y="119"
         textAnchor="middle"
         fill={ink}
-        fontSize="13"
+        fontSize="12.5"
         fontWeight="600"
         letterSpacing="5"
         fontFamily="var(--font-sans, sans-serif)"
@@ -86,15 +86,15 @@ export function AnniversarySeal({
         YEARS
       </text>
 
-      <line x1="52" y1="140" x2="148" y2="140" stroke={ring} strokeWidth="1.5" opacity="0.7" />
+      <line x1="56" y1="131" x2="144" y2="131" stroke={ring} strokeWidth="1.5" opacity="0.7" />
       <text
         x="100"
-        y="157"
+        y="147"
         textAnchor="middle"
         fill={ink}
-        fontSize="15"
+        fontSize="14"
         fontWeight="600"
-        letterSpacing="2.6"
+        letterSpacing="2.4"
         fontFamily="var(--font-sans, sans-serif)"
       >
         1975 – 2025
