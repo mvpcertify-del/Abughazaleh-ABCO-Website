@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* ABCO brand */
+  --color-navy-950: #04101f;
+  --color-navy-900: #071a31;
+  --color-navy-800: #0a2240;
+  --color-navy-700: #103158;
+  --color-navy-600: #1b4574;
+  --color-navy-100: #dde6f1;
+  --color-navy-50: #f2f6fb;
+
+  --color-gold-600: #a9861f;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #d9b64a;
+  --color-gold-300: #e3c767;
+  --color-gold-100: #f5e9c6;
+
+  --color-ivory-50: #fbf9f5;
+  --color-ivory-100: #f7f3ea;
+  --color-ivory-200: #ece5d6;
+
+  --color-olive-800: #1f4d3a;
+  --color-olive-700: #2a6349;
+  --color-olive-100: #dfeae3;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Shared utility: thin gold rule under a section heading */
+.rule-gold::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin-top: 0.85rem;
+  background: var(--color-gold-500);
+}
+
+.rule-gold-center::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: 0.85rem auto 0;
+  background: var(--color-gold-500);
+}
+
+/* Subtle dotted world-map texture used in dark panels */
+.dot-grid {
+  background-image: radial-gradient(
+    currentColor 1px,
+    transparent 1px
+  );
+  background-size: 14px 14px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
