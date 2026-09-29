@@ -215,13 +215,17 @@ export const regions = [
   "North America",
 ];
 
+/**
+ * Kept short so the full menu fits on a 1024px laptop without wrapping.
+ * Global Presence and Insights stay reachable from the footer and from
+ * in-page links rather than crowding the header.
+ */
 export const nav = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/businesses", label: "Our Businesses" },
-  { href: "/global-presence", label: "Global Presence" },
+  { href: "/about", label: "About" },
+  { href: "/businesses", label: "Businesses" },
+  { href: "/global-presence", label: "Presence" },
   { href: "/leadership", label: "Leadership" },
-  { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ];
 

@@ -46,7 +46,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/25" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 to-transparent" />
 
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-16 sm:px-6 lg:pt-14 lg:pb-24">
           <div className="max-w-2xl">
             <AnniversaryLockup tone="light" />
             <h1 className="mt-7 text-4xl leading-[1.06] font-extrabold tracking-tight text-white uppercase sm:text-5xl lg:text-6xl">

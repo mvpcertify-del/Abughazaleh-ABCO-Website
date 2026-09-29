@@ -47,10 +47,10 @@ export function Header() {
       </div>
 
       <div className="border-b border-navy-100 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-[72px]">
           <Logo />
 
-          <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7" aria-label="Main">
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-6" aria-label="Main">
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -84,7 +84,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label="Toggle navigation menu"
-              className="rounded-sm border border-navy-100 p-2.5 text-navy-800 xl:hidden"
+              className="rounded-sm border border-navy-100 p-2.5 text-navy-800 lg:hidden"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {open ? (
@@ -98,7 +98,7 @@ export function Header() {
         </div>
 
         {open && (
-          <nav className="border-t border-navy-100 bg-white xl:hidden" aria-label="Mobile">
+          <nav className="border-t border-navy-100 bg-white lg:hidden" aria-label="Mobile">
             <ul className="mx-auto max-w-7xl px-4 py-2 sm:px-6">
               {nav.map((item) => (
                 <li key={item.href}>

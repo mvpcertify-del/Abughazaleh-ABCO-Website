@@ -16,19 +16,18 @@ export function Logo({
   href?: string | null;
 }) {
   const ink = tone === "light" ? "text-white" : "text-navy-800";
-  const sub = tone === "light" ? "text-white/70" : "text-navy-800/65";
 
   const mark = (
     <span className={`inline-block leading-none ${className}`}>
       <span className="relative inline-block">
         <span
-          className={`font-display text-[1.75rem] leading-none font-bold tracking-tight ${ink}`}
+          className={`font-display text-[2rem] leading-none font-bold tracking-tight ${ink}`}
         >
           ABCO
         </span>
         <svg
           viewBox="0 0 120 18"
-          className="absolute -top-1.5 right-0 h-3 w-14 text-gold-500"
+          className="absolute -top-2 right-0 h-3.5 w-16 text-gold-500"
           aria-hidden="true"
         >
           <path
@@ -40,11 +39,7 @@ export function Logo({
           />
         </svg>
       </span>
-      <span
-        className={`mt-1 block text-[7.5px] leading-tight font-semibold tracking-[0.13em] whitespace-nowrap uppercase ${sub}`}
-      >
-        Abughazaleh Trading Company LLC
-      </span>
+      <span className="sr-only">Abughazaleh Trading Company LLC</span>
     </span>
   );
 
