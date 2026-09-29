@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { AnniversarySeal } from "./Anniversary50";
+import { WorldMap } from "./WorldMap";
+import { FacebookIcon, InstagramIcon, LinkedInIcon, XIcon } from "./icons";
 import { leadership, sectors, site } from "@/lib/site";
 
 const quickLinks = [
@@ -13,8 +15,12 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <footer className="relative overflow-hidden bg-navy-900 text-white">
+      <WorldMap
+        decorative
+        className="pointer-events-none absolute top-1/2 right-0 hidden w-[52%] -translate-y-1/2 text-white/[0.06] lg:block"
+      />
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <Logo tone="light" />
@@ -22,6 +28,24 @@ export function Footer() {
               {site.description}
             </p>
             <AnniversarySeal tone="light" className="mt-7 h-24 w-24 opacity-90" />
+
+            <div className="mt-7 flex items-center gap-3">
+              {[
+                { Icon: FacebookIcon, label: "Facebook" },
+                { Icon: XIcon, label: "X" },
+                { Icon: LinkedInIcon, label: "LinkedIn" },
+                { Icon: InstagramIcon, label: "Instagram" },
+              ].map(({ Icon, label }) => (
+                <a
+                  key={label}
+                  href="#"
+                  aria-label={`ABCO on ${label}`}
+                  className="flex h-9 w-9 items-center justify-center border border-white/15 text-white/60 transition hover:border-gold-500 hover:text-gold-400"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>

@@ -78,18 +78,19 @@ export function Portrait({
   className = "",
   sizes = "(max-width: 768px) 100vw, 320px",
   priority = false,
+  compact = false,
 }: {
   leader: Leader;
   className?: string;
   sizes?: string;
   priority?: boolean;
+  /** Monogram only, no caption — for thumbnails too small to hold the label. */
+  compact?: boolean;
 }) {
+  // The board share a surname, so first-name letters keep the monograms distinct.
   const initials = leader.name
     .replace(/^Mr\.\s*/i, "")
-    .split(/[\s-]+/)
     .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
     .toUpperCase();
 
   const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", leader.photo));
@@ -109,10 +110,18 @@ export function Portrait({
         <>
           <div className="dot-grid absolute inset-0 text-white/10" aria-hidden="true" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-            <span className="font-display text-5xl font-bold text-gold-400/80">{initials}</span>
-            <span className="text-[10px] tracking-[0.2em] text-white/40 uppercase">
-              Portrait to follow
+            <span
+              className={`font-display font-bold text-gold-400/80 ${
+                compact ? "text-xl" : "text-5xl"
+              }`}
+            >
+              {initials}
             </span>
+            {!compact && (
+              <span className="text-[10px] tracking-[0.2em] text-white/40 uppercase">
+                Portrait to follow
+              </span>
+            )}
           </div>
         </>
       )}

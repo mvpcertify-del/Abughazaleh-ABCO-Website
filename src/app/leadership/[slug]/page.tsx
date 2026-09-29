@@ -112,7 +112,12 @@ export default async function LeaderPage({
             {others.map((l) => (
               <article key={l.slug} className="group bg-white transition hover:shadow-lg">
                 <Link href={`/leadership/${l.slug}`} className="flex items-center gap-4 p-4">
-                  <Portrait leader={l} className="h-20 w-20 shrink-0 rounded-full" sizes="80px" />
+                  <Portrait
+                    leader={l}
+                    compact
+                    className="h-20 w-20 shrink-0 rounded-full"
+                    sizes="80px"
+                  />
                   <div className="min-w-0">
                     <h3 className="font-bold text-navy-800 transition group-hover:text-gold-600">
                       {l.name}

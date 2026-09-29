@@ -203,6 +203,7 @@ export default function HomeThemeTwo() {
                 <Link href={`/leadership/${l.slug}`} className="group block">
                   <Portrait
                     leader={l}
+                    compact
                     className="mx-auto aspect-square w-40 rounded-full"
                     sizes="160px"
                   />

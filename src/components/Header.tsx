@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { AnniversaryLockup } from "./Anniversary50";
+import { FacebookIcon, LinkedInIcon, XIcon } from "./icons";
 import { nav, site } from "@/lib/site";
 
 export function Header() {
@@ -21,12 +22,26 @@ export function Header() {
       <div className="bg-navy-900 text-white/80">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-[11px] tracking-wide sm:px-6">
           <p className="truncate">Since 1975 — Building Global Trade Connections</p>
-          <div className="hidden items-center gap-4 sm:flex">
+          <div className="hidden items-center gap-3.5 sm:flex">
             <a href={`mailto:${site.email}`} className="hover:text-gold-300">
               {site.email}
             </a>
-            <span className="text-white/25">|</span>
-            <span>EN</span>
+            <span className="text-white/20">|</span>
+            <span className="font-semibold text-white">EN</span>
+            <span className="text-white/20">|</span>
+            <span className="hover:text-gold-300">AR</span>
+            <span className="text-white/20">|</span>
+            <span className="flex items-center gap-3">
+              <a href="#" aria-label="ABCO on Facebook" className="hover:text-gold-300">
+                <FacebookIcon />
+              </a>
+              <a href="#" aria-label="ABCO on X" className="hover:text-gold-300">
+                <XIcon />
+              </a>
+              <a href="#" aria-label="ABCO on LinkedIn" className="hover:text-gold-300">
+                <LinkedInIcon />
+              </a>
+            </span>
           </div>
         </div>
       </div>
@@ -35,12 +50,12 @@ export function Header() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
           <Logo />
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-7" aria-label="Main">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative text-[13px] font-semibold tracking-wide uppercase transition-colors ${
+                className={`relative text-[12px] font-semibold tracking-wide whitespace-nowrap uppercase transition-colors xl:text-[13px] ${
                   isActive(item.href)
                     ? "text-navy-800"
                     : "text-navy-800/65 hover:text-navy-800"
@@ -55,10 +70,12 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <AnniversaryLockup className="hidden xl:inline-flex" />
+            <span className="hidden 2xl:block">
+              <AnniversaryLockup />
+            </span>
             <Link
               href="/contact"
-              className="hidden rounded-sm bg-gold-500 px-5 py-2.5 text-[12px] font-bold tracking-[0.12em] text-navy-900 uppercase transition hover:bg-gold-400 sm:inline-block"
+              className="hidden rounded-sm bg-gold-500 px-5 py-2.5 text-[12px] font-bold tracking-[0.12em] whitespace-nowrap text-navy-900 uppercase transition hover:bg-gold-400 sm:inline-block"
             >
               Let&apos;s Talk
             </Link>

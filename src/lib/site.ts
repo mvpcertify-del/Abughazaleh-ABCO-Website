@@ -13,6 +13,10 @@ export const site = {
   address: "Dubai, United Arab Emirates",
 };
 
+/** Home hero background. Swap for client photography when supplied. */
+export const heroImage =
+  "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2000&q=80";
+
 export type Sector = {
   slug: string;
   name: string;
