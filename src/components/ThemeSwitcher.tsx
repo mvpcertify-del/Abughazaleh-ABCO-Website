@@ -7,11 +7,17 @@ export const themeOptions = [
 ];
 
 /**
- * Client-facing preview switcher for the three home-page directions.
- * Delete this component (and the /theme-2, /theme-3 routes) once a
- * direction is signed off.
+ * Set to true to show the floating preview switcher for the three home-page
+ * directions. Hidden on the live site; the /theme-2 and /theme-3 routes still
+ * work by URL, so the alternatives can be shared directly.
+ *
+ * Once a direction is signed off, delete this component along with those routes.
  */
+const SHOW_SWITCHER = false;
+
 export function ThemeSwitcher({ current }: { current: number }) {
+  if (!SHOW_SWITCHER) return null;
+
   return (
     <div className="fixed right-4 bottom-4 z-40 print:hidden">
       <div className="rounded-full border border-navy-800/10 bg-white/95 p-1.5 shadow-xl ring-1 ring-black/5 backdrop-blur">
