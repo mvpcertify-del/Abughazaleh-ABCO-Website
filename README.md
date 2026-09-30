@@ -8,7 +8,7 @@ Production domain: **abughazalehabco.com**
 
 ## Stack
 
-- Next.js 15 (App Router) + React 19
+- Next.js 16 (App Router) + React 19
 - TypeScript
 - Tailwind CSS v4
 - Geist via `next/font` (matches the WCA Global site)
