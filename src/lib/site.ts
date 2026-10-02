@@ -162,7 +162,7 @@ export const leadership: Leader[] = [
     slug: "midhat-abu-ghazaleh",
     name: "Midhat Abu-Ghazaleh",
     role: "Chief Executive Officer",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/midhatabughazaleh/",
     photo: "/leadership/midhat-abu-ghazaleh.jpg",
     bio: [
       "Midhat Abu-Ghazaleh is Chief Executive Officer of ABCO, leading the company's operations across all six business sectors.",
