@@ -7,7 +7,7 @@ falls back to a drawn silhouette.
 
 | File                          | Person                                |
 | ----------------------------- | ------------------------------------- |
-| `marwan-abu-ghazaleh.jpg`     | Mr. Marwan Abu-Ghazaleh — Chairman    |
+| `marwan-abu-ghazaleh.jpg`     | Marwan Abu-Ghazaleh — Chairman        |
 | `midhat-abu-ghazaleh.jpg`     | Midhat Abu-Ghazaleh — CEO             |
 | `hassan-abu-ghazaleh.jpg`     | Hassan Abu-Ghazaleh — Board Member    |
 | `nabil-abu-ghazaleh.jpg`      | Nabil Abu-Ghazaleh — Board Member     |

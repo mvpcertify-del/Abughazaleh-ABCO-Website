@@ -9,7 +9,7 @@ export const site = {
   description:
     "Abughazaleh Trading Company (ABCO) LLC is an international trading house operating since 1975 across food products, construction products, factory machinery, detergents and chemicals, logistics and real estate.",
   email: "info@abughazalehabco.com",
-  phone: "+971 4 123 4567",
+  phone: "+9714 8886574",
   address: "Dubai, United Arab Emirates",
 };
 
@@ -148,12 +148,12 @@ export type Leader = {
 export const leadership: Leader[] = [
   {
     slug: "marwan-abu-ghazaleh",
-    name: "Mr. Marwan Abu-Ghazaleh",
+    name: "Marwan Abu-Ghazaleh",
     role: "Chairman",
     linkedin: "https://www.linkedin.com/",
     photo: "/leadership/marwan-abu-ghazaleh.jpg",
     bio: [
-      "Mr. Marwan Abu-Ghazaleh serves as Chairman of Abughazaleh Trading Company (ABCO) LLC, guiding the group's direction and long-term strategy.",
+      "Marwan Abu-Ghazaleh serves as Chairman of Abughazaleh Trading Company (ABCO) LLC, guiding the group's direction and long-term strategy.",
       "Under his stewardship ABCO has grown from its 1975 foundations into a diversified international trading house spanning food, construction, industrial machinery, chemicals, logistics and real estate.",
     ],
     focus: ["Group strategy", "Governance", "Partnerships"],
